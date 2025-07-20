@@ -1,14 +1,14 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"FruitDrop",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -26,15 +26,22 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1100.0.665",
+    "IDEVersion":"2024.1400.0.849",
   },
   "name":"FruitDrop",
   "resources":[
+    {"id":{"name":"ob_ball","path":"objects/ob_ball/ob_ball.yy",},},
+    {"id":{"name":"ob_controller","path":"objects/ob_controller/ob_controller.yy",},},
+    {"id":{"name":"ob_wall","path":"objects/ob_wall/ob_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"sp_ball","path":"sprites/sp_ball/sp_ball.yy",},},
+    {"id":{"name":"sp_obj","path":"sprites/sp_obj/sp_obj.yy",},},
+    {"id":{"name":"sp_wall","path":"sprites/sp_wall/sp_wall.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
