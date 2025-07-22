@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/Objects.yy",
+    "path":"folders/Game/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +29,9 @@
     {"x":128.0,"y":128.0,},
   ],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"ball_type","filters":[],"listItems":[],"multiselect":false,"name":"ball_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":1,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
