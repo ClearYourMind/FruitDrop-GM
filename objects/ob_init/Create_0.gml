@@ -1,5 +1,5 @@
 globalvar debug;
-debug = true
+debug = false
 
 application_surface_enable(false)
 gpu_set_ztestenable(false)
