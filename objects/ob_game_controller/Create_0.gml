@@ -22,6 +22,18 @@ ball_types = [
 		object: ob_ball,
 		index: 3,
 		fixture: noone
+	},
+	{
+		scale: 0.5,
+		object: ob_ball,
+		index: 4,
+		fixture: noone
+	},
+	{
+		scale: 1,
+		object: ob_ball,
+		index: 5,
+		fixture: noone
 	}
 ]
 
@@ -48,8 +60,8 @@ show_debug_message("_________")
 
 next_ball_type_num = -1
 
-spawn_ball = function(_x, _ball_type) {
-	instance_create_layer(_x, ob_spawner.y, "Balls", _ball_type.object, {
+spawn_ball = function(_x, _y, _ball_type) {
+	instance_create_layer(_x, _y, "Balls", _ball_type.object, {
 		image_xscale: _ball_type.scale,
 		image_yscale: _ball_type.scale,
 		ball_type: _ball_type
@@ -58,12 +70,22 @@ spawn_ball = function(_x, _ball_type) {
 }
 
 choose_next_ball = function() {
-// can be placed in Step event
 //	next_ball_type_num = (next_ball_type_num + 1) mod ball_types_num
 //	next_ball = ball_types[next_ball_type_num]
 	var v = irandom(ball_types_num-1)
 	next_ball = ball_types[v]
 	next_ball_type_num = v
+}
+
+merged_ball = function(_index) {
+	return ball_types[_index + 1]
+}
+
+merge_balls = function (_self, _other, _x, _y) {
+// called in collision event of ob_ball
+	
+	instance_destroy(_self)
+	instance_destroy(_other)
 }
 
 choose_next_ball()

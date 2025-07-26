@@ -1,2 +1,4 @@
-if not initialized
+if not initialized {
 	init()
+	exit
+}
