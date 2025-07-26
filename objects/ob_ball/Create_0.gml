@@ -1,4 +1,5 @@
 initialized = false
+to_destroy = false
 
 init = function () {
 	physics_fixture_bind(ball_type.fixture, id)

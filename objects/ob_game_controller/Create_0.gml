@@ -30,9 +30,21 @@ ball_types = [
 		fixture: noone
 	},
 	{
-		scale: 1,
+		scale: 0.675,
 		object: ob_ball,
 		index: 5,
+		fixture: noone
+	},
+	{
+		scale: 0.8,
+		object: ob_ball,
+		index: 6,
+		fixture: noone
+	},
+	{
+		scale: 0.975,
+		object: ob_ball,
+		index: 7,
 		fixture: noone
 	}
 ]
@@ -72,20 +84,18 @@ spawn_ball = function(_x, _y, _ball_type) {
 choose_next_ball = function() {
 //	next_ball_type_num = (next_ball_type_num + 1) mod ball_types_num
 //	next_ball = ball_types[next_ball_type_num]
-	var v = irandom(ball_types_num-1)
+	var v = irandom(4 - 1)
 	next_ball = ball_types[v]
 	next_ball_type_num = v
 }
 
-merged_ball = function(_index) {
-	return ball_types[_index + 1]
-}
-
-merge_balls = function (_self, _other, _x, _y) {
+merge_balls = function(_self, _other, _x, _y) {
 // called in collision event of ob_ball
+	var _index = _self.ball_type.index
 	
-	instance_destroy(_self)
-	instance_destroy(_other)
+	// Biggest balls are destroyed, not spawning anything in their place
+	if _index + 1 < ball_types_num
+		spawn_ball(_x, _y, 	ball_types[_index + 1])
 }
 
 choose_next_ball()
