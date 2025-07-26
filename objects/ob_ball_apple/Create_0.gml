@@ -21,8 +21,11 @@ init = function() {
 
 	fix = physics_fixture_create()
 	physics_fixture_set_polygon_shape(fix)
-	for (i=1; i<path_get_number(shape); i++)
+	show_debug_message("-------------")
+	for (i=0; i<path_get_number(shape); i++) {
 		physics_fixture_add_point(fix, path_get_point_x(shape, i), path_get_point_y(shape, i))
+		show_debug_message("shape point {0}, {1}", path_get_point_x(shape, i), path_get_point_y(shape, i))
+	}
 	physics_fixture_set_collision_group(fix, 1)
 	physics_fixture_set_restitution(fix, 0.25)
 	physics_fixture_set_density(fix, 0.8)

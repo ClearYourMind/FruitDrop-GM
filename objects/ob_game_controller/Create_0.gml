@@ -1,6 +1,6 @@
 ball_types = [
 	{
-		scale: 0.1,
+		scale: 0.125,
 		object: ob_ball_apple
 	},
 	{

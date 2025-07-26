@@ -38,6 +38,7 @@
   },
   "name":"FruitDrop",
   "resources":[
+    {"id":{"name":"Log","path":"notes/Log/Log.yy",},},
     {"id":{"name":"ob_ball_apple","path":"objects/ob_ball_apple/ob_ball_apple.yy",},},
     {"id":{"name":"ob_ball","path":"objects/ob_ball/ob_ball.yy",},},
     {"id":{"name":"ob_game_controller","path":"objects/ob_game_controller/ob_game_controller.yy",},},
