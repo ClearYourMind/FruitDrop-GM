@@ -43,7 +43,7 @@
     "inheritPhysicsSettings":false,
     "PhysicsWorld":true,
     "PhysicsWorldGravityX":0.0,
-    "PhysicsWorldGravityY":10.0,
+    "PhysicsWorldGravityY":15.0,
     "PhysicsWorldPixToMetres":0.1,
   },
   "resourceType":"GMRoom",

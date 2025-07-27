@@ -3,13 +3,13 @@ to_destroy = false
 
 init = function () {
 	physics_fixture_bind(ball_type.fixture, id)
-	phy_active = true
-	
+	phy_active = true	
 	initialized = true
 }
 
 /*   Variable definitions:
 
 ball_type as struct
+just_dropped as boolean - whether it dropped from spawner. Used to apply force at start
 
 */

@@ -59,7 +59,7 @@ for (var i=0; i<ball_types_num; i++) {
 	physics_fixture_set_circle_shape(fix, width)
 	physics_fixture_set_collision_group(fix, 1)
 	physics_fixture_set_restitution(fix, 0.25)
-	physics_fixture_set_density(fix, 1.125)
+	physics_fixture_set_density(fix, 1.375)
 	// add fixture to ball_type struct
 	ball_types[i].fixture = fix
 }
@@ -74,7 +74,7 @@ next_ball_type_num = -1
 next_ball = noone
 
 spawn_ball = function(_x, _y, _ball_type) {
-	instance_create_layer(_x, _y, "Balls", _ball_type.object, {
+	return instance_create_layer(_x, _y, "Balls", _ball_type.object, {
 		image_xscale: _ball_type.scale,
 		image_yscale: _ball_type.scale,
 		ball_type: _ball_type
@@ -94,6 +94,16 @@ merge_balls = function(_self, _other, _x, _y) {
 	var _index = _self.ball_type.index
 	
 	// Biggest balls are destroyed, not spawning anything in their place
-	if _index + 1 < ball_types_num
-		spawn_ball(_x, _y, 	ball_types[_index + 1])
+	if _index + 1 < ball_types_num {
+		var _ball = spawn_ball(_x, _y, ball_types[_index + 1])
+		// repel balls around (collision_circle is not working)
+	//	var _ball_list = ds_list_create()
+	//	collision_circle_list(_x, _y, _ball.sprite_width*0,5, false, false, _ball_list, false)
+	//	for (var i=0; i<ds_list_size(_ball_list); i++)
+	//		_ball_list.image_blend = c_red
+	//	show_debug_message("Diameter of explosion wave: {0}", _ball.sprite_width)
+	//	show_debug_message("Instances to repel num: {0}", ds_list_size(_ball_list))
+	//	ds_list_destroy(_ball_list)
+	//	_ball_list = noone
+	}
 }
