@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"ob_spawner",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":false,
   "name":"ob_spawner",
   "overriddenProperties":[],
@@ -32,5 +36,5 @@
     "path":"sprites/sp_obj_center/sp_obj_center.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
