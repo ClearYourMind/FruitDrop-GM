@@ -13,3 +13,14 @@ ball_type as struct
 just_dropped as boolean - whether it dropped from spawner. Used to apply force at start
 
 */
+
+merge = function(_self, _other, _x, _y) {
+// called in collision event of ob_ball
+	var _index = _self.ball_type.index
+	
+	// Biggest balls are destroyed, not spawning anything in their place
+	with ob_game_controller
+		if _index + 1 < ball_types_num {
+			var _ball = spawn_ball(_x, _y, ball_types[_index + 1])
+		}
+}

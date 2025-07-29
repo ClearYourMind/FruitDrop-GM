@@ -1,51 +1,59 @@
 ball_types = [
 	{
-		scale: 0.125,
+		scale: 0.08,
 		object: ob_ball,
 		index: 0,
-		fixture: noone
+		fixture: noone,
+		color: c_red
 	},
 	{
-		scale: 0.175,
+		scale: 0.12,
 		object: ob_ball,
 		index: 1,
-		fixture: noone
+		fixture: noone,
+		color: c_blue
 	},
 	{
-		scale: 0.25,
+		scale: 0.2,
 		object: ob_ball,
 		index: 2,
-		fixture: noone
+		fixture: noone,
+		color: make_color_rgb(192, 0, 128)
 	},
 	{
-		scale: 0.325,
+		scale: 0.31,
 		object: ob_ball,
 		index: 3,
-		fixture: noone
+		fixture: noone,
+		color: c_orange
 	},
 	{
 		scale: 0.425,
 		object: ob_ball,
 		index: 4,
-		fixture: noone
+		fixture: noone,
+		color: c_green
 	},
 	{
 		scale: 0.5625,
 		object: ob_ball,
 		index: 5,
-		fixture: noone
+		fixture: noone,
+		color: make_color_rgb(255, 128, 128) // pink
 	},
 	{
 		scale: 0.675,
 		object: ob_ball,
 		index: 6,
-		fixture: noone
+		fixture: noone,
+		color: make_color_rgb(128, 0, 32) // brown
 	},
 	{
 		scale: 0.8,
 		object: ob_ball,
 		index: 7,
-		fixture: noone
+		fixture: noone,
+		color: make_color_rgb(255, 32, 96) // magenta
 	}
 ]
 
@@ -58,8 +66,9 @@ for (var i=0; i<ball_types_num; i++) {
 	var width = sprite_get_width(object_get_sprite(bt.object)) * bt.scale * 0.5
 	physics_fixture_set_circle_shape(fix, width)
 	physics_fixture_set_collision_group(fix, 1)
-	physics_fixture_set_restitution(fix, 0.25)
-	physics_fixture_set_density(fix, 1.375)
+	physics_fixture_set_restitution(fix, 0.15)
+	physics_fixture_set_density(fix, 1.75)
+	physics_fixture_set_friction(fix, 0.75)
 	// add fixture to ball_type struct
 	ball_types[i].fixture = fix
 }
@@ -77,6 +86,7 @@ spawn_ball = function(_x, _y, _ball_type) {
 	return instance_create_layer(_x, _y, "Balls", _ball_type.object, {
 		image_xscale: _ball_type.scale,
 		image_yscale: _ball_type.scale,
+		image_blend: _ball_type.color,
 		ball_type: _ball_type
 	})
 }
@@ -89,21 +99,4 @@ choose_next_ball = function() {
 	ob_spawner.update_ball(next_ball)	
 }
 
-merge_balls = function(_self, _other, _x, _y) {
-// called in collision event of ob_ball
-	var _index = _self.ball_type.index
-	
-	// Biggest balls are destroyed, not spawning anything in their place
-	if _index + 1 < ball_types_num {
-		var _ball = spawn_ball(_x, _y, ball_types[_index + 1])
-		// repel balls around (collision_circle is not working)
-	//	var _ball_list = ds_list_create()
-	//	collision_circle_list(_x, _y, _ball.sprite_width*0,5, false, false, _ball_list, false)
-	//	for (var i=0; i<ds_list_size(_ball_list); i++)
-	//		_ball_list.image_blend = c_red
-	//	show_debug_message("Diameter of explosion wave: {0}", _ball.sprite_width)
-	//	show_debug_message("Instances to repel num: {0}", ds_list_size(_ball_list))
-	//	ds_list_destroy(_ball_list)
-	//	_ball_list = noone
-	}
-}
+drop_ready = true
