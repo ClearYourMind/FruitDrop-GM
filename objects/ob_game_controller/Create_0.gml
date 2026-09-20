@@ -66,9 +66,10 @@ for (var i=0; i<ball_types_num; i++) {
 	var width = sprite_get_width(object_get_sprite(bt.object)) * bt.scale * 0.5
 	physics_fixture_set_circle_shape(fix, width)
 	physics_fixture_set_collision_group(fix, 1)
-	physics_fixture_set_restitution(fix, 0.15)
+	physics_fixture_set_restitution(fix, 0.10)
+	physics_fixture_set_angular_damping(fix, 1)
 	physics_fixture_set_density(fix, 1.75)
-	physics_fixture_set_friction(fix, 0.75)
+	physics_fixture_set_friction(fix, 0.10)
 	// add fixture to ball_type struct
 	ball_types[i].fixture = fix
 }

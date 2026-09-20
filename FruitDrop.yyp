@@ -34,7 +34,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.849",
+    "IDEVersion":"2026.100.0.1149",
   },
   "name":"FruitDrop",
   "resources":[
@@ -48,6 +48,7 @@
     {"id":{"name":"pt_ball_apple","path":"paths/pt_ball_apple/pt_ball_apple.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"rm_shapes","path":"rooms/rm_shapes/rm_shapes.yy",},},
+    {"id":{"name":"sp_ball_apple_bw","path":"sprites/sp_ball_apple_bw/sp_ball_apple_bw.yy",},},
     {"id":{"name":"sp_ball_apple","path":"sprites/sp_ball_apple/sp_ball_apple.yy",},},
     {"id":{"name":"sp_ball","path":"sprites/sp_ball/sp_ball.yy",},},
     {"id":{"name":"sp_obj_center","path":"sprites/sp_obj_center/sp_obj_center.yy",},},

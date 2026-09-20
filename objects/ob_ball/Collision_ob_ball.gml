@@ -5,4 +5,6 @@ if not to_destroy {
 	merge(self, other, _x, _y)	
 	to_destroy = true
 	other.to_destroy = true
+	visible = false
+	other.visible = false
 }

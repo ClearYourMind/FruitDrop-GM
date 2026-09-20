@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sp_ball",
-    "path":"sprites/sp_ball/sp_ball.yy",
+    "name":"sp_ball_apple_bw",
+    "path":"sprites/sp_ball_apple_bw/sp_ball_apple_bw.yy",
   },
   "spriteMaskId":null,
   "visible":true,
